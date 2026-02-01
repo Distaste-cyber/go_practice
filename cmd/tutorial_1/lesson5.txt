@@ -1,0 +1,30 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	var myString = []rune("résumé")
+	var indexed = myString[0]
+	fmt.Printf("%v, %T", indexed, indexed)
+	for i, v := range myString {
+		fmt.Printf("%v, %v, %T \n", i, v, v)
+	}
+
+	fmt.Printf("The length of this string in bytes is %v \n", len(myString))
+
+	var myRune = 'a'
+	fmt.Printf("\n myRune = %v \n", myRune)
+
+	var strSlice = []string{"s", "u", "b", "s", "c", "r", "i", "b", "e"}
+	var stringBuilder strings.Builder
+
+	for i := range strSlice {
+		stringBuilder.WriteString(strSlice[i])
+	}
+	var castStr = stringBuilder.String()
+	fmt.Println(castStr)
+
+}

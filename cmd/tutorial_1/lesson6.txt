@@ -1,0 +1,48 @@
+package main
+
+import "fmt"
+
+type gasEngine struct {
+	mpg     uint16
+	gallons uint16
+	owner
+}
+
+type electricEngine struct {
+	mpkwh uint16
+	kwh   uint16
+	owner
+}
+
+func (e gasEngine) milesLeft() uint16 {
+	return e.gallons * e.mpg
+}
+
+func (e electricEngine) milesLeft() uint16 {
+	return e.kwh * e.mpkwh
+}
+
+type engine interface {
+	milesLeft() uint16
+}
+
+func canMakeIt(e engine, miles uint16) {
+	if miles <= e.milesLeft() {
+		fmt.Println("You can make it there!")
+	} else {
+		fmt.Println("Need to fuel up first!")
+	}
+}
+
+type owner struct {
+	name string
+}
+
+func main() {
+	var myEngine gasEngine = gasEngine{25, 15, owner{"Alex"}}
+	var myEngine2 electricEngine = electricEngine{25, 15, owner{"Alex"}}
+	fmt.Println(myEngine.mpg, myEngine.gallons, myEngine.name)
+	fmt.Printf("There are %v miles left in the tank \n", myEngine.milesLeft())
+	canMakeIt(myEngine, 245)
+	canMakeIt(myEngine2, 400)
+}

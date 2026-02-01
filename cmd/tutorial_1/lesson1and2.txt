@@ -1,0 +1,37 @@
+package main
+
+// import (
+// 	"fmt"
+// 	"unicode/utf8"
+// )
+
+// func main() {
+// 	var intNum int = 12
+// 	fmt.Println(intNum)
+
+// 	var floatNum float32 = 24.5
+// 	fmt.Println(floatNum)
+
+// 	var result float32 = float32(intNum) + floatNum
+// 	fmt.Println(result)
+// 	var n1 int16 = 4
+// 	var n2 int16 = 6
+// 	fmt.Println(n2 / n1)
+// 	fmt.Println(n2 % n1)
+
+// 	var myString string = "Hello" + " " + "World"
+// 	fmt.Println(myString)
+
+// 	fmt.Println(utf8.RuneCountInString("Seven"))
+
+// 	var myRune rune = 'a'
+// 	fmt.Println(myRune)
+
+// 	num6 := 6
+// 	fmt.Println(num6)
+
+// 	name := "Muhammad Azan"
+// 	fmt.Println(name)
+
+// 	const pi float32 = 3.1415
+// }
